@@ -41,6 +41,18 @@ namespace msg_window
             InitializeMsgKey();
             udp_for_received.BeginReceive(OnUdpDataGot, false);
             udp_for_sent.BeginReceive(OnUdpDataGot, true);
+            /*
+            int[] width = { 50, 40, 85, 85 };
+            string[] tip = { "序号", "时间" };
+            for (int i = 0; i < tip.Length; i++)
+            {
+                ColumnHeader ch = new ColumnHeader();
+                ch.Text = tip[i];
+                ch.Width = width[i];
+                ch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                this.listView1.Columns.Add(ch);
+            }
+            */
         }
 
         private void InitializeMsgKey()
@@ -64,7 +76,7 @@ namespace msg_window
         {
             string ret = types[type] == null ? type.ToString() : types[type].ToString();
             ret = ret + "   " + string.Format("{0}:{1}:{2}.{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
-            ret = is_sent ? "↑   " + ret : "↓   " + ret;
+            ret = is_sent ? "↑   " + ret : "     " + ret;
             return ret;
         }
 
@@ -109,7 +121,7 @@ namespace msg_window
 
                 msgs.Add(msg);
                 list_msg.Items.Add(Type2Text(type, is_sent));
-                list_msg.SelectedIndex = list_msg.Items.Count - 1;
+                //list_msg.SelectedIndex = list_msg.Items.Count - 1;
             };
             list_msg.Invoke(w);
         }
@@ -125,12 +137,12 @@ namespace msg_window
             if (!locked)
             {
                 locked = true;
-                button_lock.Text = "解锁";
+                button_lock.Text = "继续接收消息";
             }
             else
             {
                 locked = false;
-                button_lock.Text = "锁定";
+                button_lock.Text = "暂停接收消息";
             }
         }
 
@@ -195,6 +207,11 @@ namespace msg_window
             //发送  
             if (m_socket != null)
                 m_socket.SendTo(msg.ToArray(), ep);
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

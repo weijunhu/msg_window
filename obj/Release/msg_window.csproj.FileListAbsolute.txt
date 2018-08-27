@@ -24,3 +24,15 @@ E:\gitsub\msg_window\obj\Release\msg_window.csprojResolveAssemblyReference.cache
 E:\gitsub\msg_window\obj\Release\msg_window.Form1.resources
 E:\gitsub\msg_window\obj\Release\msg_window.Properties.Resources.resources
 E:\gitsub\msg_window\obj\Release\msg_window.csproj.GenerateResource.Cache
+D:\Documents\GitHub\msg_window\bin\Release\msg_window.exe.config
+D:\Documents\GitHub\msg_window\obj\Release\msg_window.exe
+D:\Documents\GitHub\msg_window\obj\Release\msg_window.pdb
+D:\Documents\GitHub\msg_window\bin\Release\msg_window.exe
+D:\Documents\GitHub\msg_window\bin\Release\msg_window.pdb
+D:\Documents\GitHub\msg_window\bin\Release\JsonViewer.dll
+D:\Documents\GitHub\msg_window\bin\Release\lua51.dll
+D:\Documents\GitHub\msg_window\bin\Release\LuaInterface.dll
+D:\Documents\GitHub\msg_window\bin\Release\Newtonsoft.Json.dll
+D:\Documents\GitHub\msg_window\obj\Release\msg_window.Form1.resources
+D:\Documents\GitHub\msg_window\obj\Release\msg_window.Properties.Resources.resources
+D:\Documents\GitHub\msg_window\obj\Release\msg_window.csproj.GenerateResource.Cache

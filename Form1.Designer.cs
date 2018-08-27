@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.msg_info_box = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // json_viewer
@@ -46,20 +47,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.json_viewer.Json = null;
-            this.json_viewer.Location = new System.Drawing.Point(285, 40);
+            this.json_viewer.Location = new System.Drawing.Point(324, 40);
             this.json_viewer.Name = "json_viewer";
-            this.json_viewer.Size = new System.Drawing.Size(557, 292);
+            this.json_viewer.Size = new System.Drawing.Size(539, 483);
             this.json_viewer.TabIndex = 2;
             // 
             // list_msg
             // 
-            this.list_msg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.list_msg.FormattingEnabled = true;
             this.list_msg.ItemHeight = 12;
             this.list_msg.Location = new System.Drawing.Point(10, 40);
             this.list_msg.Name = "list_msg";
-            this.list_msg.Size = new System.Drawing.Size(270, 292);
+            this.list_msg.Size = new System.Drawing.Size(308, 196);
             this.list_msg.TabIndex = 1;
             this.list_msg.SelectedIndexChanged += new System.EventHandler(this.list_msg_SelectedIndexChanged);
             // 
@@ -67,9 +66,9 @@
             // 
             this.button_lock.Location = new System.Drawing.Point(87, 2);
             this.button_lock.Name = "button_lock";
-            this.button_lock.Size = new System.Drawing.Size(65, 34);
+            this.button_lock.Size = new System.Drawing.Size(94, 34);
             this.button_lock.TabIndex = 3;
-            this.button_lock.Text = "锁定";
+            this.button_lock.Text = "暂停接收消息";
             this.button_lock.UseVisualStyleBackColor = true;
             this.button_lock.Click += new System.EventHandler(this.button_lock_Click);
             // 
@@ -85,25 +84,28 @@
             // 
             // button_send2client
             // 
-            this.button_send2client.Location = new System.Drawing.Point(13, 354);
+            this.button_send2client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_send2client.Location = new System.Drawing.Point(10, 533);
             this.button_send2client.Name = "button_send2client";
             this.button_send2client.Size = new System.Drawing.Size(80, 34);
             this.button_send2client.TabIndex = 5;
-            this.button_send2client.Text = "给客户端发消息";
+            this.button_send2client.Text = "S2C";
             this.button_send2client.UseVisualStyleBackColor = true;
             this.button_send2client.Click += new System.EventHandler(this.ButtonSend2ClientClick);
             // 
             // msg_id_box
             // 
-            this.msg_id_box.Location = new System.Drawing.Point(158, 362);
+            this.msg_id_box.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.msg_id_box.Location = new System.Drawing.Point(149, 541);
             this.msg_id_box.Name = "msg_id_box";
             this.msg_id_box.Size = new System.Drawing.Size(263, 21);
             this.msg_id_box.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 365);
+            this.label1.Location = new System.Drawing.Point(96, 544);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 12);
             this.label1.TabIndex = 7;
@@ -111,8 +113,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 411);
+            this.label2.Location = new System.Drawing.Point(8, 570);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 8;
@@ -120,10 +123,12 @@
             // 
             // msg_info_box
             // 
-            this.msg_info_box.Location = new System.Drawing.Point(10, 435);
+            this.msg_info_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.msg_info_box.Location = new System.Drawing.Point(10, 585);
             this.msg_info_box.Multiline = true;
             this.msg_info_box.Name = "msg_info_box";
-            this.msg_info_box.Size = new System.Drawing.Size(880, 99);
+            this.msg_info_box.Size = new System.Drawing.Size(851, 25);
             this.msg_info_box.TabIndex = 9;
             // 
             // label3
@@ -134,11 +139,23 @@
             this.label3.Size = new System.Drawing.Size(0, 12);
             this.label3.TabIndex = 10;
             // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView1.Location = new System.Drawing.Point(12, 242);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(306, 275);
+            this.listView1.TabIndex = 11;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 546);
+            this.ClientSize = new System.Drawing.Size(868, 622);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.msg_info_box);
             this.Controls.Add(this.label2);
@@ -169,6 +186,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox msg_info_box;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListView listView1;
 
     }
 }
